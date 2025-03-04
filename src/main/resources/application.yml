@@ -1,0 +1,78 @@
+# 配置数据库地址
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.96.82.209:3306/exam?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: exam
+    password: e2yB2NHx7kE37Xdc
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  # 配置RabbitMQ地址
+  rabbitmq:
+    host: 47.96.82.209
+    port: 5672
+    username: admin
+    password: c4158d20
+  # 配置Redis地址
+  redis:
+    host: 47.96.82.209
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100
+    database: 0
+# 配置端口路径
+server:
+  port: 8090
+  servlet:
+    context-path: /grading
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+# 配置日志输出等级
+logging:
+  level:
+    org:
+      grade: debug
+
+# 阿里云oss
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-shanghai.aliyuncs.com
+      keyid: LTAI5tSEmvSq3DASkikLz8ba
+      keysecret: 4LsfzvryLqJEbh6ipGWuCHWKyakwDI
+      bucketname: jiang-yan-ying
+
+# 分页插件pageHelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+# 设定云端接口请求头
+api:
+  grade: # 设定智能阅卷云端接口
+    url: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+    request:
+      secret: sk-4d0da57468b540b9a93b322fb2362597
+  comment: # 设定多样评语云端接口
+    url:  https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+    request:
+      secret: sk-4d0da57468b540b9a93b322fb2362597
+  extend: # 设定智能辅助云端接口
+    url:  https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+    request:
+      secret: sk-4d0da57468b540b9a93b322fb2362597
