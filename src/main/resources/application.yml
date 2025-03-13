@@ -51,10 +51,10 @@ logging:
 aliyun:
   oss:
     file:
-      endpoint: oss-cn-shanghai.aliyuncs.com
-      keyid: LTAI5tSEmvSq3DASkikLz8ba
-      keysecret: 4LsfzvryLqJEbh6ipGWuCHWKyakwDI
-      bucketname: jiang-yan-ying
+      endpoint:
+      keyid:
+      keysecret:
+      bucketname:
 
 # 分页插件pageHelper
 pagehelper:
@@ -67,12 +67,12 @@ api:
   grade: # 设定智能阅卷云端接口
     url: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
     request:
-      secret: sk-4d0da57468b540b9a93b322fb2362597
+      secret:
   comment: # 设定多样评语云端接口
     url:  https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
     request:
-      secret: sk-4d0da57468b540b9a93b322fb2362597
+      secret:
   extend: # 设定智能辅助云端接口
     url:  https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
     request:
-      secret: sk-4d0da57468b540b9a93b322fb2362597
+      secret:
